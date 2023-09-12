@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {MainContainer,ChatContainer,MessageList,Message,MessageInput,TypingIndicator} from "@chatscope/chat-ui-kit-react"
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 const BASE_URL = import.meta.env.VITE_APP_BASE_URL
+
+const sec_NEw_CREate="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"
  
 const App = () => {
   const [typing,setTyping] = useState(false)
@@ -56,10 +58,10 @@ const App = () => {
       ]
     }
 
-    await fetch("https://api.openai.com/v1/chat/completions",{
+    await fetch(BASE_URL,{
       method:"POST",
       headers:{
-        "Authorization":"Bearer "+ BASE_URL,
+        "Authorization":"Bearer "+ sec_NEw_CREate,
         "Content-Type":"application/json"
       },
       body:JSON.stringify(apiRequestBody)
