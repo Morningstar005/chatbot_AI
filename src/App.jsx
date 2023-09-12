@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {MainContainer,ChatContainer,MessageList,Message,MessageInput,TypingIndicator} from "@chatscope/chat-ui-kit-react"
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
-const API_KEY="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"
+const API_KEY="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"
 
 const App = () => {
   const [typing,setTyping] = useState(false)
@@ -66,8 +66,8 @@ const App = () => {
     }).then((data)=>{
       return data.json()
     }).then((data)=>{
-      // console.log("data",data)
-      // console.log(data.choices[0].message.content)
+      console.log("data",data)
+      console.log(data.choices[0].message.content)
       setMessage(
         [...chatMessages,{
           message:data.choices[0].message.content,
@@ -80,7 +80,7 @@ const App = () => {
   }
   return (
     <div >
-      <div className='relative items-center justify-center h-[51.5rem] m-2 md:h-[60rem] sm:h-[51.5rem]'>
+      <div className='relative items-center justify-center h-[100vh]'>
         <MainContainer>
           <ChatContainer>
             <MessageList 
